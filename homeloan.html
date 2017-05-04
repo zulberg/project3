@@ -7,12 +7,73 @@
   <script type="text/javascript" src="project3.js"></script>
 </head>
 <body id="home">
-
-
+  <h3>Welcome to the home loan page.  Depending on your credit score you will see what price range you can afford, your down payment
+    requirement, and what your interest rate will be.  Your payments will be based off of your down payment, the loan balance,
+    your interest rate, and the length of the loan.  Please enter your FICO credit score below:</h3>
+    <!-- The following code is courtesy of w3Schools (www.w3schools.com) and CINS 110 coursework -->
+    <div class="row myinput-row">
+      <div class="form-group" id="creditScore">
+        <label for="creditScore" class="col-sm-2 control-label">FICO Credit Score</label>
+        <div class="col-sm-2">
+          <input type="text" id="fico" class="form-control input-md">
+          <span id="scoreError" class="control-label hidden-message">
+            </span>
+        </div>
+      </div>
+    </div>
   <div class="row">
     <div class="col-sm-offset-2 col-sm-2">
       <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
       </button>
     </div>
   </div>
-  
+  <div class="row myinput-row">
+    <div class="form-group" id="price">
+      <label for="priceAmt" class="col-sm-2 control-label">Price</label>
+      <div class="col-sm-2">
+        <input type="text" id="fico" class="form-control input-md">
+        <span id="scoreError" class="control-label hidden-message">
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+      <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
+      </button>
+    </div>
+  </div>
+  <div class="row myinput-row">
+    <div class="form-group" id="downpmt">
+      <label for="downPayment" class="col-sm-2 control-label">Down Payment Amount</label>
+      <div class="col-sm-2">
+        <input type="text" id="dwnpmt" class="form-control input-md">
+        <span id="dwnpmtError" class="control-label hidden-message">
+          </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+      <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
+      </button>
+    </div>
+  </div>
+  <div class="row myinput-row">
+    <div class="form-group" id="intrate">
+      <label for="interestRate" class="col-sm-2 control-label">Interest Rate</label>
+      <div class="col-sm-2">
+        <input type="text" id="interestRate" class="form-control input-md">
+        <span id="interestError" class="control-label hidden-message">
+          </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+      <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
+      </button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,3 +1,76 @@
-body {
-  background-color: "lightskyblue";
+#home {
+  background-color: lightgreen;
+  font-family: "sans-serif", Arial, Verdana;
+  font-size: 150%;
+  background-image: url(https://ap.rdcpix.com/160857799/c450be90668a986bb01a75fe1386eb0cl-m0xd-w480_h480_q80.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  /* Picture taken from Coldwell Banker and Realtor.com */
+  }
+#auto {
+  background-color: lightskyblue;
+  font-family: "sans-serif", Arial, Verdana;
+  font-size: 150%;
+  background-image: url(https://images.dealer.com/ddc/vehicles/2017/Ford/Shelby%20GT350/Coupe/color/Avalanche%20Gray-DR-102,103,109-640-en_US.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  /* Picture taken from Corning Ford (www.corningford.com) */
+}
+ /* The following code is courtesy of w3schools (www.w3schools.com) */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+#creditScore {
+  float: left; width: 25%;
+}
+#price {
+  width: 25%;
+}
+#downpmt {
+  width: 25%;
+}
+#intrate {
+  float: right; width: 25%;
 }
