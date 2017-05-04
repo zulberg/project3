@@ -1,4 +1,8 @@
 var score=document.getElementById("fico").value;
+var autoprice=document.getElementById("price").value;
+var homeprice=document.getElementById("hprice").value;
+var autoDownPayment=document.getElementById("autodownpmt").value;
+var homeDownPayment=document.getElementById("homedownpmt").value;
 var autopmt[];
 var homepmt[];
 var autoInterestRate=[.225, .175, .125, .089, .049, .009];
