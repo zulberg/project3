@@ -6,51 +6,76 @@
   <link rel="stylesheet" href="proj3.css" />
   <script type="text/javascript" src="project3.js"></script>
 </head>
-<body id="auto">
+<body id="auto" lang="en-US">
   <h3>Welcome to the auto loan page.  Depending on your credit score you will see what price range you can afford, your down payment
     requirement, and what your interest rate will be.  Your payments will be based off of your down payment, the loan balance,
     your interest rate, and the length of the loan.  Please enter your FICO credit score below:</h3>
     <!-- The following code is courtesy of w3Schools (www.w3schools.com) and CINS 110 coursework -->
-    <div class="row myinput-row">
-      <div class="form-group" id="creditScore">
-        <label for="creditScore" class="col-sm-2 control-label">FICO Credit Score</label>
-        <div class="col-sm-2">
-          <input type="text" id="fico" class="form-control input-md">
-          <span id="scoreError" class="control-label hidden-message">
-            </span>
-        </div>
+    <div class="container-fluid">
+        <form class="form-horizontal">
+          <div class="row">
+            <div class="col-sm-offset-2">
+              <h1>Enter Your FICO Credit Score:</small></h1>
+            </div>
+          </div> <!-- end heading row /-->
+          <div class="row myinput-row">
+            <div class="form-group" id="creditScore">
+              <label for="creditScore" class="col-sm-2 control-label">FICO credit score</label>
+              <div class="col-sm-2">
+                <input type="text" id="fico" class="form-control input-md" />
+                <span id="scoreError" class="control-label hidden-message">
+                  Error Placeholder (hidden)
+                </span>
+              </div>
+            </div>
+          </div> <!-- end score row /-->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary col-sm-1"
+                onclick="autoficoscore();">
+                Proceed to next section
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group" id="priceGroup">
+              <label for="price" class="col-sm-2 control-label">Price</label>
+              <div class="col-sm-2">
+                <input type="text" id="autoPrice" class="form-control input-md" />
+                <span id="priceError" class="control-label hidden-message">
+                  Error placeholder (hidden)
+                </span>
+              </div>
+            </div>
+          </div> <!-- end price row /-->
+          <div class="form-group">
+            <divk8 class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary col-sm-1"
+                onclick="autoficoscore();">
+                Proceed to next section
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group" id="priceGroup">
+              <label for="price" class="col-sm-2 control-label">Down Payment</label>
+              <div class="col-sm-2">
+                <input type="text" id="autodownpmt" class="form-control input-md" />
+                <span id="pmtError" class="control-label hidden-message">
+                  Error placeholder (hidden)
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary col-sm-1"
+                onclick="autoficoscore();">
+                Proceed to next section
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-    </div>
-    <div class="row myinput-row">
-      <div class="form-group" id="aprice">
-        <label for="priceAmt" class="col-sm-2 control-label">Price</label>
-        <div class="col-sm-2">
-          <input type="text" id="autoprice" class="form-control input-md">
-        </div>
-      </div>
-    </div>
-    <div class="row myinput-row">
-      <div class="form-group" id="autodownpmt">
-        <label for="downPayment" class="col-sm-2 control-label">Down Payment Amount</label>
-        <div class="col-sm-2">
-          <input type="text" id="dwnpmt" class="form-control input-md">
-          <span id="dwnpmtError" class="control-label hidden-message">
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-2">
-        <button id="price" type="button" class="btn btn-primary" onclick="autoficoscore();">Proceed
-        </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-2">
-        <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
-        </button>
-      </div>
-    </div>
   </body>
 </html>
