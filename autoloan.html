@@ -15,7 +15,7 @@
         <form class="form-horizontal">
           <div class="row">
             <div class="col-sm-offset-2">
-              <h1>Enter Your FICO Credit Score:</small></h1>
+              <h1>Enter your financial information below:</small></h1>
             </div>
           </div> <!-- end heading row /-->
           <div class="row myinput-row">
@@ -24,7 +24,6 @@
               <div class="col-sm-2">
                 <input type="text" id="fico" class="form-control input-md" />
                 <span id="scoreError" class="control-label hidden-message">
-                  Error Placeholder (hidden)
                 </span>
               </div>
             </div>
@@ -32,18 +31,17 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="button" class="btn btn-primary col-sm-1"
-                onclick="autoficoscore();">
-                Proceed to next section
+                onclick="autoPrice(); autoficoscore()">
+                Proceed to Price
               </button>
             </div>
           </div>
           <div class="row">
-            <div class="form-group" id="priceGroup">
+            <div class="form-group" id="aprice">
               <label for="price" class="col-sm-2 control-label">Price</label>
               <div class="col-sm-2">
                 <input type="text" id="autoPrice" class="form-control input-md" />
                 <span id="priceError" class="control-label hidden-message">
-                  Error placeholder (hidden)
                 </span>
               </div>
             </div>
@@ -52,7 +50,7 @@
             <divk8 class="col-sm-offset-2 col-sm-10">
               <button type="button" class="btn btn-primary col-sm-1"
                 onclick="autoficoscore();">
-                Proceed to next section
+                Proceed to Down Payment
               </button>
             </div>
           </div>
@@ -62,7 +60,6 @@
               <div class="col-sm-2">
                 <input type="text" id="autodownpmt" class="form-control input-md" />
                 <span id="pmtError" class="control-label hidden-message">
-                  Error placeholder (hidden)
                 </span>
               </div>
             </div>
@@ -71,7 +68,7 @@
             <div class="col-sm-offset-2 col-sm-10">
               <button type="button" class="btn btn-primary col-sm-1"
                 onclick="autoficoscore();">
-                Proceed to next section
+                Proceed to next page
               </button>
             </div>
           </div>

@@ -13,7 +13,7 @@
   font-size: 150%;
   background-image: url(https://images.dealer.com/ddc/vehicles/2017/Ford/Shelby%20GT350/Coupe/color/Avalanche%20Gray-DR-102,103,109-640-en_US.jpg);
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: bottom right;
   /* Picture taken from Corning Ford (www.corningford.com) */
 }
  /* The following code is courtesy of w3schools (www.w3schools.com) */
@@ -61,16 +61,4 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
-}
-#creditScore {
-  float: left; width: 25%;
-}
-#price {
-  width: 25%;
-}
-#downpmt {
-  width: 25%;
-}
-#intrate {
-  float: right; width: 25%;
 }
