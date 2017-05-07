@@ -14,7 +14,27 @@ var homerate;
 var autoMinDownPmt;
 var maxAutoPrice;
 
-
+function autoPrice(score, autoprice, maxAutoprice) {
+  autoprice=document.getElementById("aprice").value;
+  var autoindex;
+  if (score < 300 && autoprice > maxAutoprice) {
+    autoindex=0;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >= 300 && score <= 629 && autoprice > maxAutoprice) {
+    autoindex=1;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >= 630 && score <= 689 && autoprice > maxAutoprice) {
+    autoindex=2;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >=690 && score <= 719 && autoprice > maxAutoprice) {
+    autoindex=3;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >= 720 && score <= 789 && autoprice > maxAutoprice) {
+    autoindex=4;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  }
+  maxAutoprice = maxAutoPrice[autoindex];
+}
 
 function autoficoscore(score, autoInterestRate, maxAutoprice, maxAutoloan) {
   var index;
@@ -63,27 +83,7 @@ function autoficoscore(score, autoInterestRate, maxAutoprice, maxAutoloan) {
   autorate = autoInterestRate[index];
 }
 
-function autoPrice(score, autoprice, maxAutoprice) {
-  autoprice=document.getElementById("aprice").value;
-  var autoindex;
-  if (score < 300 && autoprice > maxAutoprice) {
-    autoindex=0;
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-  } else if (score >= 300 && score <= 629 && autoprice > maxAutoprice) {
-    autoindex=1;
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-  } else if (score >= 630 && score <= 689 && autoprice > maxAutoprice) {
-    autoindex=2;
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-  } else if (score >=690 && score <= 719 && autoprice > maxAutoprice) {
-    autoindex=3;
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-  } else if (score >= 720 && score <= 789 && autoprice > maxAutoprice) {
-    autoindex=4;
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-  }
-  maxAutoprice = maxAutoPrice[autoindex];
-}
+
 
 
 function homeficoscore(score, homeInterestRate) {
