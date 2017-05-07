@@ -6,16 +6,15 @@ var homeDownPayment=document.getElementById("homedownpmt").value;
 var autopmt[];
 var homepmt[];
 var autoInterestRate=[.225, .175, .125, .089, .049, .009];
-var homeInterestRate=[.1375, .1085, .0675, .0475, .0395, .0325]
+var homeInterestRate=[.1375, .1085, .0675, .0475, .0395, .0325];
 var maxAutoprice=[15000, 27500, 50000, 70000, 125000];
 var maxAutoloan=[5000, 10000, 16500, 22500, 37500, 100000];
 var autorate;
 var homerate;
 var autoMinDownPmt;
 var maxAutoPrice;
-function nextPage() {
-window.location.href="page1.html";
-}
+
+
 
 function autoficoscore(score, autoInterestRate, maxAutoprice, maxAutoloan) {
   var index;
@@ -70,10 +69,18 @@ function autoPrice(score, autoprice, maxAutoprice) {
   if (score < 300 && autoprice > maxAutoprice) {
     autoindex=0;
     document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-  } else if (score >= 300 && score <= 629 && autoprice > 35000) {
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $35,000.";
-  } else if (score >= 630 && score <= 689 && autoprice >) {
-
+  } else if (score >= 300 && score <= 629 && autoprice > maxAutoprice) {
+    autoindex=1;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >= 630 && score <= 689 && autoprice > maxAutoprice) {
+    autoindex=2;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >=690 && score <= 719 && autoprice > maxAutoprice) {
+    autoindex=3;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  } else if (score >= 720 && score <= 789 && autoprice > maxAutoprice) {
+    autoindex=4;
+    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
   }
   maxAutoprice = maxAutoPrice[autoindex];
 }
@@ -103,4 +110,7 @@ function homeficoscore(score, homeInterestRate) {
     alert("A score of 850 is considered perfect.  Please choose again.");
   }
   homerate = homeInterestRate[homeindex];
+}
+function nextPage() {
+window.location.href="page1.html";
 }
