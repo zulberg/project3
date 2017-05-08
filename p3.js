@@ -1,14 +1,19 @@
 var score=document.getElementById("fico").value;
 var vehicleprice;
 var downpmtauto;
-var maxAutoloan=[5000, 10000, 16500, 22500, 37500, 100000];
-var maxAutoprice=[15000, 22500, 35000, 50000, 75000];
-var autoInterestRate=[.225, .175, .125, .089, .049, .009];
+
 var autoMinDownPmt;
 var autorate;
 var autoloan;
 var autoprice;
-
+var aloan=[
+  {loan: 5000, maxprice: 15000, intrate: .225},
+  {loan: 10000, maxprice: 22500, intrate: .175},
+  {loan: 16500, maxprice: 35000, intrate: .125},
+  {loan: 22500, maxprice: 50000, intrate: .089},
+  {loan: 37500, maxprice: 75000, intrate: .049},
+  {loan: 100000, maxprice:250000, intrate: .009},
+];
 function getscoreauto(score, autoInterestRate, maxAutoprice, maxAutoloan) {
   var index;
   if (score < 300) {
