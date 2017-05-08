@@ -1,10 +1,8 @@
 var score=document.getElementById("fico").value;
 var vehicleprice;
 var downpmtauto;
-
-var autoMinDownPmt;
-var autorate;
-var autoloan;
+var mindwnpmt;
+var autoloaninfo;
 var autoprice;
 var aloan=[
   {loan: 5000, maxprice: 15000, intrate: .225},
@@ -14,87 +12,93 @@ var aloan=[
   {loan: 37500, maxprice: 75000, intrate: .049},
   {loan: 100000, maxprice:250000, intrate: .009},
 ];
-function getscoreauto(score, autoInterestRate, maxAutoprice, maxAutoloan) {
+function getscoreauto(score, aloan) {
   var index;
   if (score < 300) {
     index=0;
-    autoPriceIndex=0;
-    maxAutoloanIndex=0;
-    document.getElementById("fico").innerHTML="Your maximum loan amount is $"maxAutoloan+".";
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-    document.getElementById("fico").innerHTML="Your interest rate is "autoInterestRate+", or 22.5%";
+    document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan.loan+".";
+    document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+    document.getElementById("autorate").innerHTML="Your interest rate is "+aloan.intrate+", or 22.5%";
   } else if (score >= 300 && score <= 629) {
     index=1;
-    autoPriceIndex=1;
-    maxAutoloanIndex=1;
-    document.getElementById("fico").innerHTML="Your maximum loan amount is $"maxAutoloan+".";
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-    document.getElementById("fico").innerHTML="Your interest rate is "autoInterestRate+", or 17.5%";
+    document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan.loan+".";
+    document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+    document.getElementById("autorate").innerHTML="Your interest rate is "+aloan.intrate+", or 17.5%";
   } else if (score >= 630 && score <= 689) {
     index=2;
-    autoPriceIndex=2;
-    maxAutoloanIndex=2;
-    document.getElementById("fico").innerHTML="Your maximum loan amount is $"maxAutoloan+".";
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-    document.getElementById("fico").innerHTML="Your interest rate is "autoInterestRate+", or 12.5%";
+    document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan.loan+".";
+    document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+    document.getElementById("autorate").innerHTML="Your interest rate is "+aloan.intrate+", or 12.5%";
   } else if (score >= 690 && score <= 719) {
     index=3;
-    autoPriceIndex=3;
-    maxAutoloanIndex=3;
-    document.getElementById("fico").innerHTML="Your maximum loan amount is $"maxAutoloan+".";
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-    document.getElementById("fico").innerHTML="Your interest rate is "autoInterestRate+", or 8.9%";
+    document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan.loan+".";
+    document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+    document.getElementById("autorate").innerHTML="Your interest rate is "+aloan.intrate+", or 8.9%";
   } else if (score >= 720 && score <= 789) {
     index=4;
-    autoPriceIndex=4;
-    maxAutoloanIndex=4;
-    document.getElementById("fico").innerHTML="Your maximum loan amount is $"maxAutoloan+".";
-    document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
-    document.getElementById("fico").innerHTML="Your interest rate is "autoInterestRate+", or 4.9%";
+    document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan.loan+".";
+    document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+    document.getElementById("autorate").innerHTML="Your interest rate is "+aloan.intrate+", or 4.9%";
   } else if (score >= 790 && score <= 850) {
     index=5;
-    maxAutoloanIndex=5;
-    document.getElementById("fico").innerHTML="Your maximum loan amount is $"maxAutoloan+".";
-    document.getElementById("fico").innerHTML="You can buy any vehicle you want.";
-    document.getElementById("fico").innerHTML="Your interest rate is "autoInterestRate+", or 0.9%";
+    document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan.loan+".";
+    document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+    document.getElementById("autorate").innerHTML="Your interest rate is "+aloan.intrate+", or 0.9%";
   } else if (score > 850) {
     alert("A score of 850 is considered perfect.  Please choose again.");
   }
-  autoloan = maxAutoloan[maxAutoloanIndex];
-  autoprice = maxAutoprice[autoPriceIndex];
-  autorate = autoInterestRate[index];
-  return score;
+  aloaninfo = aloan[index];
+  return aloaninfo;
 }
 
-function getautoprice(score, maxAutoprice) {
+function getautoprice(score, aloan) {
   vehicleprice=document.getElementById("autoPrice").value;
   var autoPriceIndex;
   autoprice = maxAutoprice[autoPriceIndex];
   if(score < 300 && vehicleprice > maxAutoprice) {
   autoPriceIndex=0;
-  document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
   } else if (score >= 300 && score <= 629 && vehicleprice > maxAutoprice){
   autoPriceIndex=1;
-  document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
   } else if (score >= 630 && score <= 689 && vehicleprice > maxAutoprice) {
   autoPriceIndex=2;
-  document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
   } else if (score >= 690 && score <= 719 && vehicleprice > maxAutoprice) {
   autoPriceIndex=3;
-  document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
   } else if (score >= 720 && score <= 789 && vehicleprice > maxAutoprice) {
   autoPriceIndex=4;
-  document.getElementById("fico").innerHTML="Your maximum vehicle price is $"maxAutoprice+".";
+  document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
+  } else if (score >= 790 && score <= 850 && vehicleprice > maxAutoprice) {
+  autoPriceIndex=5;
+  document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan.maxprice+".";
   }
   return vehicleprice;
 }
 
-function autoDownPmt(vehicleprice, maxAutoprice) {
+function autoDownPmt(score, vehicleprice, aloan, maxAutoprice) {
   downpmtauto=document.getElementById("autodownpmt").value;
+  var pmtIndex;
+  mindwnpmt=vehicleprice - aloan.loan;
+  if (score < 300 && downpmtauto < mindwnpmt) {
+    pmtIndex=0;
+    document.getElementById("pmtError").innerHTML="Insufficient down payment entered, your minimum down payment must be at least $"+mindwnpmt+".";
+  } else if (score >= 300 && score <= 629 && downpmtauto < mindwnpmt) {
+    pmtIndex=1;
+    document.getElementById("pmtError").innerHTML="Insufficient down payment entered, your minimum down payment must be at least $"+mindwnpmt+".";
+  } else if (score >= 630 && score <= 689 && downpmtauto < mindwnpmt) {
+    pmtIndex=2;
+    document.getElementById("pmtError").innerHTML="Insufficient down payment entered, your minimum down payment must be at least $"+mindwnpmt+".";
+  } else if (score >= 690 && score <= 719 && downpmtauto < mindwnpmt) {
+    pmtIndex=3;
+    document.getElementById("pmtError").innerHTML="Insufficient down payment entered, your minimum down payment must be at least $"+mindwnpmt+".";
+  } else if (score >= 720 && score <= 789 && downpmtauto < mindwnpmt) {
+    pmtIndex=4;
+    document.getElementById("pmtError").innerHTML="Insufficient down payment entered, your minimum down payment must be at least $"+mindwnpmt+".";
+  } else if (score >= 790 && score <= 850 && downpmtauto < mindwnpmt) {
+    pmtIndex=5;
+    document.getElementById("pmtError").innerHTML="Insufficient down payment entered, your minimum down payment must be at least $"+mindwnpmt+".";
+  }
   return downpmtauto;
-}
-
-function autoMinDownPmt(downpmtauto, vehicleprice) {
-  var mindwnpmt=vehicleprice-autoloan;
-  return mindwnpmt;
 }
