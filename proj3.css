@@ -2,20 +2,28 @@
   background-color: lightgreen;
   font-family: "sans-serif", Arial, Verdana;
   font-size: 150%;
+  color: #ff0000;
   background-image: url(https://ap.rdcpix.com/160857799/c450be90668a986bb01a75fe1386eb0cl-m0xd-w480_h480_q80.jpg);
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: center right;
   /* Picture taken from Coldwell Banker and Realtor.com */
   }
 #auto {
   background-color: lightskyblue;
   font-family: "sans-serif", Arial, Verdana;
   font-size: 150%;
+  color: #FF0000;
   background-image: url(https://images.dealer.com/ddc/vehicles/2017/Ford/Shelby%20GT350/Coupe/color/Avalanche%20Gray-DR-102,103,109-640-en_US.jpg);
   background-repeat: no-repeat;
   background-position: bottom right;
   /* Picture taken from Corning Ford (www.corningford.com) */
 }
+/* The following code is courtesy of Hubpages (https://hubpages.com/technology/Use-a-HTML-Form-with-JavaScript-to-Amortize-a-Loan) */
+body {background-color:white; font-family: Arial, Helvetica, sans-serif}
+      h2 {color:blue; letter-spacing: 1em; font-size: 1.5em; text-align: center}
+      input {color:blue; margin-left: 15px}
+      td {text-align:center; background-color:yellow}
+
  /* The following code is courtesy of w3schools (www.w3schools.com) */
 .dropbtn {
     background-color: #4CAF50;

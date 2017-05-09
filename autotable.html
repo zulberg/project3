@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Amortization Table</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="proj3.css" />
+  <script type="text/javascript" src="p3.js"></script>
+</head>
+<body lang="en-US">
+  <center>
+      <div id="mainForm">
+        <form id="form1" name="form1">
+          <table>
+            <tr><td> Your name</td>
+              <td><input id="name" name="name" size="35" /></td>
+            </tr>
+            <tr><td> Loan Amount</td>
+              <td><input id="amount" name="amount" size="8" /></td>
+            </tr>
+            <tr><td> Interest Rate</td>
+              <td><input id="rate" name="rate" size="5" /></td>
+            </tr>
+            <tr><td> Number of Payments</td>
+              <td><input id="numPay" name="numPay" size="5" /></td>
+            </tr>
+            <tr><td></td>
+              <!-- Clicking the Commit button invokes the commitData() function in the <script> section above -->
+              <td><input type="button" onclick="commitData()" value="Commit" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>
