@@ -4,74 +4,84 @@
   <title>Home Loan</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="proj3.css" />
-  <script type="text/javascript" src="project3.js"></script>
+  <script type="text/javascript" src="p3.js"></script>
 </head>
 <body id="home">
   <h3>Welcome to the home loan page.  Depending on your credit score you will see what price range you can afford, your down payment
     requirement, and what your interest rate will be.  Your payments will be based off of your down payment, the loan balance,
     your interest rate, and the length of the loan.  Please enter your FICO credit score below:</h3>
     <!-- The following code is courtesy of w3Schools (www.w3schools.com) and CINS 110 coursework -->
-    <div class="row myinput-row">
-      <div class="form-group" id="creditScore">
-        <label for="creditScore" class="col-sm-2 control-label">FICO Credit Score</label>
-        <div class="col-sm-2">
-          <input type="text" id="fico" class="form-control input-md">
-          <span id="scoreError" class="control-label hidden-message">
-            </span>
+    <p id="maxHomeloan">
+    <p id="maxHomeprice">
+    <p id="homerate">
+    <div class="container-fluid">
+        <form class="form-horizontal">
+          <div class="row">
+            <div class="col-sm-offset-2">
+            </div>
+          </div>
+          <div class="row myinput-row">
+            <div class="form-group" id="creditScore">
+              <label for="creditScore" class="col-sm-2 control-label">FICO credit score</label>
+              <div class="col-sm-2">
+                <input type="text" id="fico" class="form-control input-md" />
+                <span id="scoreError" class="control-label hidden-message">
+                </span>
+              </div>
+            </div>
+          </div> <!-- end score row /-->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary col-sm-1"
+                onclick="getscorehome();">
+                Enter Price
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group" id="hprice">
+              <label for="price" class="col-sm-2 control-label">Price</label>
+              <div class="col-sm-2">
+                <input type="text" id="homePrice" class="form-control input-md" />
+                <span id="priceError" class="control-label hidden-message">
+                </span>
+              </div>
+            </div>
+          </div> <!-- end price row /-->
+          <div class="form-group">
+            <divk8 class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary col-sm-1"
+                onclick="gethomeprice();">
+                Enter Down Payment
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group" id="priceGroup">
+              <label for="price" class="col-sm-2 control-label">Down Payment</label>
+              <div class="col-sm-2">
+                <input type="text" id="homedownpmt" class="form-control input-md" />
+                <span id="pmtError" class="control-label hidden-message">
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary col-sm-1"
+                onclick="homeDownPmt();">
+                Proceed to Loan Duration
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="dropdown" id="drop">
+       <button class="dropbtn">Loan duration (in months)</button>
+        <div class="dropdown-content">
+         <a href="page1.html">First page</a>
+
         </div>
       </div>
-    </div>
-  <div class="row">
-    <div class="col-sm-offset-2 col-sm-2">
-      <button id="continuebutton" type="button" class="btn btn-primary" onclick="ficoscore();">Continue
-      </button>
-    </div>
-  </div>
-  <div class="row myinput-row">
-    <div class="form-group" id="hprice">
-      <label for="priceAmt" class="col-sm-2 control-label">Price</label>
-      <div class="col-sm-2">
-        <input type="text" id="homeprice" class="form-control input-md">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-offset-2 col-sm-2">
-      <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
-      </button>
-    </div>
-  </div>
-  <div class="row myinput-row">
-    <div class="form-group" id="homedownpmt">
-      <label for="downPayment" class="col-sm-2 control-label">Down Payment Amount</label>
-      <div class="col-sm-2">
-        <input type="text" id="dwnpmt" class="form-control input-md">
-        <span id="dwnpmtError" class="control-label hidden-message">
-          </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-offset-2 col-sm-2">
-      <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
-      </button>
-    </div>
-  </div>
-  <div class="row myinput-row">
-    <div class="form-group" id="intrate">
-      <label for="interestRate" class="col-sm-2 control-label">Interest Rate</label>
-      <div class="col-sm-2">
-        <input type="text" id="interestRate" class="form-control input-md">
-        <span id="interestError" class="control-label hidden-message">
-          </span>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-offset-2 col-sm-2">
-      <button id="continuebutton" type="button" class="btn btn-primary" onclick="nextPage();">Continue
-      </button>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
