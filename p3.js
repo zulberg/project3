@@ -23,6 +23,7 @@ var downpmthome;
 var mindwnpmthome;
 var autotime=[12,24,36,48,60,72];
 var hometime=[60,120,180,240,300,360];
+
 function getscoreauto() {
   var index;
   score=document.getElementById("fico").value;

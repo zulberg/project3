@@ -19,10 +19,10 @@
   /* Picture taken from Corning Ford (www.corningford.com) */
 }
 /* The following code is courtesy of Hubpages (https://hubpages.com/technology/Use-a-HTML-Form-with-JavaScript-to-Amortize-a-Loan) */
-body {background-color:white; font-family: Arial, Helvetica, sans-serif}
-      h2 {color:blue; letter-spacing: 1em; font-size: 1.5em; text-align: center}
-      input {color:blue; margin-left: 15px}
-      td {text-align:center; background-color:yellow}
+#table {background-color:white; font-family: Arial, Helvetica, sans-serif}
+#table h2 {color:blue; letter-spacing: 1em; font-size: 1.5em; text-align: center}
+#table input {color:blue; margin-left: 15px}
+#table td {text-align:center; background-color:yellow}
 
  /* The following code is courtesy of w3schools (www.w3schools.com) */
 .dropbtn {
