@@ -2,6 +2,7 @@ var score;
 var vehicleprice;
 var downpmtauto;
 var mindwnpmt;
+var totalAutoLoan;
 var aloan=[
   {loan: 5000, maxprice: 15000, intrate: .225},
   {loan: 10000, maxprice: 22500, intrate: .175},
@@ -21,8 +22,11 @@ var hloan=[
 var homeprice;
 var downpmthome;
 var mindwnpmthome;
-var autotime=[12,24,36,48,60,72];
-var hometime=[60,120,180,240,300,360];
+var totalHomeLoan;
+var autotime=document.getElementById("automos").value;
+var hometime=document.getElementById("homomos").value;
+var autorate=[];
+var homerate=[];
 
 function getscoreauto() {
   var index;
@@ -32,31 +36,37 @@ function getscoreauto() {
     document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan[0].loan+".";
     document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan[0].maxprice+".";
     document.getElementById("autorate").innerHTML="Your interest rate is "+aloan[0].intrate+", or 22.5%";
+    autorate.push(aloan[0].intrate);
   } else if (score >= 300 && score <= 629) {
     index=1;
     document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan[1].loan+".";
     document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan[1].maxprice+".";
     document.getElementById("autorate").innerHTML="Your interest rate is "+aloan[1].intrate+", or 17.5%";
+    autorate.push(aloan[1].intrate);
   } else if (score >= 630 && score <= 689) {
     index=2;
     document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan[2].loan+".";
     document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan[2].maxprice+".";
     document.getElementById("autorate").innerHTML="Your interest rate is "+aloan[2].intrate+", or 12.5%";
+    autorate.push(aloan[2].intrate);
   } else if (score >= 690 && score <= 719) {
     index=3;
     document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan[3].loan+".";
     document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan[3].maxprice+".";
     document.getElementById("autorate").innerHTML="Your interest rate is "+aloan[3].intrate+", or 8.9%";
+    autorate.push(aloan[3].intrate);
   } else if (score >= 720 && score <= 789) {
     index=4;
     document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan[4].loan+".";
     document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan[4].maxprice+".";
     document.getElementById("autorate").innerHTML="Your interest rate is "+aloan[4].intrate+", or 4.9%";
+    autorate.push(aloan[4].intrate);
   } else if (score >= 790 && score <= 850) {
     index=5;
     document.getElementById("maxAutoloan").innerHTML="Your maximum loan amount is $"+aloan[5].loan+".";
     document.getElementById("maxAutoprice").innerHTML="Your maximum vehicle price is $"+aloan[5].maxprice+".";
     document.getElementById("autorate").innerHTML="Your interest rate is "+aloan[5].intrate+", or 0.9%";
+    autorate.push(aloan[5].intrate);
   } else if (score > 850) {
     alert("A score of 850 is considered perfect.  Please choose again.");
   }
@@ -91,6 +101,7 @@ function getautoprice() {
 
 function autoDownPmt() {
   downpmtauto=document.getElementById("autodownpmt").value;
+  totalAutoLoan = vehicleprice - downpmtauto;
   var apmt=getautoprice(vehicleprice);
     if (score < 300 && downpmtauto < (apmt - aloan[0].loan)) {
     mindwnpmt=apmt-aloan[0].loan;
@@ -118,8 +129,18 @@ function autoDownPmt() {
     document.getElementById("pmtError").classList.add("shown-message");
   } else {
     document.getElementById("pmtError").innerHTML="Your down payment amount has been approved.";
+    document.getElementById("pmtError").innerHTML="Your loan amount is $"+totalAutoLoan+".";
     document.getElementById("pmtError").classList.add("has-success");
   }
+  return totalAutoLoan;
+}
+
+function autoTablePage() {
+  window.location.href="autotable.html";
+}
+
+function homeTablePage() {
+  window.location.href="hometable.html";
 }
 
 function getscorehome() {
@@ -130,31 +151,37 @@ function getscorehome() {
     document.getElementById("maxHomeloan").innerHTML="Your maximum loan amount is $"+hloan[0].loan+".";
     document.getElementById("maxHomeprice").innerHTML="Your maximum home price is $"+hloan[0].maxprice+".";
     document.getElementById("homerate").innerHTML="Your interest rate is "+hloan[0].intrate+", or 13.75%";
+    homerate.push(hloan[0].intrate);
   } else if (score >= 300 && score <= 629) {
     index=1;
     document.getElementById("maxHomeloan").innerHTML="Your maximum loan amount is $"+hloan[1].loan+".";
     document.getElementById("maxHomeprice").innerHTML="Your maximum home price is $"+hloan[1].maxprice+".";
     document.getElementById("homerate").innerHTML="Your interest rate is "+hloan[1].intrate+", or 10.85%";
+    homerate.push(hloan[1].intrate);
   } else if (score >= 630 && score <= 689) {
     index=2;
     document.getElementById("maxHomeloan").innerHTML="Your maximum loan amount is $"+hloan[2].loan+".";
     document.getElementById("maxHomeprice").innerHTML="Your maximum home price is $"+hloan[2].maxprice+".";
     document.getElementById("homerate").innerHTML="Your interest rate is "+hloan[2].intrate+", or 6.75%";
+    homerate.push(hloan[2].intrate);
   } else if (score >= 690 && score <= 719) {
     index=3;
     document.getElementById("maxHomeloan").innerHTML="Your maximum loan amount is $"+hloan[3].loan+".";
     document.getElementById("maxHomeprice").innerHTML="Your maximum home price is $"+hloan[3].maxprice+".";
     document.getElementById("homerate").innerHTML="Your interest rate is "+hloan[3].intrate+", or 4.75%";
+    homerate.push(hloan[3].intrate);
   } else if (score >= 720 && score <= 789) {
     index=4;
     document.getElementById("maxHomeloan").innerHTML="Your maximum loan amount is $"+hloan[4].loan+".";
     document.getElementById("maxHomeprice").innerHTML="Your maximum home price is $"+hloan[4].maxprice+".";
     document.getElementById("homerate").innerHTML="Your interest rate is "+hloan[4].intrate+", or 3.95%";
+    homerate.push(hloan[4].intrate);
   } else if (score >= 790 && score <= 850) {
     index=5;
     document.getElementById("maxHomeloan").innerHTML="Your maximum loan amount is $"+hloan[5].loan+".";
     document.getElementById("maxHomeprice").innerHTML="Your maximum home price is $"+hloan[5].maxprice+".";
     document.getElementById("homerate").innerHTML="Your interest rate is "+hloan[5].intrate+", or 3.25%";
+    homerate.push(hloan[5].intrate);
   } else if (score > 850) {
     alert("A score of 850 is considered perfect.  Please choose again.");
   }
@@ -189,6 +216,7 @@ function gethomeprice() {
 
 function homeDownPmt() {
   downpmthome=document.getElementById("homedownpmt").value;
+  totalHomeLoan = homeprice - downpmthome;
   var hpmt=gethomeprice(homeprice);
     if (score < 300 && downpmthome < (hpmt - hloan[0].loan)) {
     mindwnpmthome=hpmt-hloan[0].loan;
@@ -216,18 +244,23 @@ function homeDownPmt() {
     document.getElementById("pmtError").classList.add("shown-message");
   } else {
     document.getElementById("pmtError").innerHTML="Your down payment amount has been approved.";
+    document.getElementById("pmtError").innerHTML="Your loan amount is $"+totalHomeLoan+".";
     document.getElementById("pmtError").classList.add("has-success");
   }
+  return totalHomeLoan;
 }
+
+
+
 /* The following code is courtesy of Hubpages (https://hubpages.com/technology/Use-a-HTML-Form-with-JavaScript-to-Amortize-a-Loan) */
 /* For auto */
 function commitData() {
   // Declare and initialize the variables
   var eleId;
   var eleDat;
-  var loanAmount=document.form1.amount.value;
-  var intRate=document.form1.rate.value;
-  var numPay=document.form1.numPay.value;
+  var loanAmount=totalAutoLoan;
+  var intRate=autorate.value;
+  var numPay=document.getElementById("automos").value;
   var loopNum;
   var tagNum;
   var tagNam;
@@ -260,7 +293,6 @@ function commitData() {
   // This statement outside the loop completes the table
   document.write("</table></td></tr></table>");
   // Echo the input in the display table using the displayTableField() function
-  displayTableField("flname",loanName);
   displayTableField("lamount",loanAmount);
   displayTableField("irate",intRate);
   displayTableField("numPmt",numPay);
@@ -335,13 +367,13 @@ function twoDecimal(chgVar) {
   return twoDec;
 }
 /* for home */
-function commitData() {
+function commitDataHome() {
   // Declare and initialize the variables
   var eleId;
   var eleDat;
-  var loanAmount=document.form1.amount.value;
-  var intRate=document.form1.rate.value;
-  var numPay=document.form1.numPay.value;
+  var loanAmount=totalHomeLoan;
+  var intRate=homerate.value;
+  var numPay=document.getElementById("homemos").value;
   var loopNum;
   var tagNum;
   var tagNam;
@@ -374,7 +406,6 @@ function commitData() {
   // This statement outside the loop completes the table
   document.write("</table></td></tr></table>");
   // Echo the input in the display table using the displayTableField() function
-  displayTableField("flname",loanName);
   displayTableField("lamount",loanAmount);
   displayTableField("irate",intRate);
   displayTableField("numPmt",numPay);

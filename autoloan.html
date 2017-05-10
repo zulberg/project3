@@ -49,7 +49,7 @@
             </div>
           </div> <!-- end price row /-->
           <div class="form-group">
-            <divk8 class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-2 col-sm-10">
               <button type="button" class="btn btn-primary col-sm-1"
                 onclick="getautoprice();">
                 Enter Down Payment
@@ -76,16 +76,26 @@
           </div>
         </form>
       </div>
-      <div class="dropdown" id="automos">
+      <select id="automos">
+      <div class="dropdown">
        <button class="dropbtn">Loan duration (in months)</button>
-        <div class="dropdown-content" id="automos">
-         <a href="autotable.html">12 mos.</a>
-         <a href="autotable.html">24 mos.</a>
-         <a href="autotable.html">36 mos.</a>
-         <a href="autotable.html">48 mos.</a>
-         <a href="autotable.html">60 mos.</a>
-         <a href="autotable.html">72 mos.</a>
+        <div class="dropdown-content">
+         <option value="12">12 mos.</option>
+         <option value="24">24 mos.</option>
+         <option value="36">36 mos.</option>
+         <option value="48">48 mos.</option>
+         <option value="60">60 mos.</option>
+         <option value="72">72 mos.</option>
         </div>
       </div>
+    </select>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-primary col-sm-1"
+          onclick="autoTablePage();">
+          Continue to Loan Table
+        </button>
+      </div>
+    </div>
   </body>
 </html>

@@ -49,7 +49,7 @@
             </div>
           </div> <!-- end price row /-->
           <div class="form-group">
-            <divk8 class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-2 col-sm-10">
               <button type="button" class="btn btn-primary col-sm-1"
                 onclick="gethomeprice();">
                 Enter Down Payment
@@ -76,16 +76,26 @@
           </div>
         </form>
       </div>
-      <div class="dropdown" id="homemos">
+      <select id="homemos">
+      <div class="dropdown">
        <button class="dropbtn">Loan duration (in months)</button>
         <div class="dropdown-content">
-         <a href="hometable.html">60 mos.</a>
-         <a href="hometable.html">120 mos.</a>
-         <a href="hometable.html">180 mos.</a>
-         <a href="hometable.html">240 mos.</a>
-         <a href="hometable.html">300 mos.</a>
-         <a href="hometable.html">360 mos.</a>
+         <option value="60">60 mos.</option>
+         <option value="120">120 mos.</option>
+         <option value="180">180 mos.</option>
+         <option value="240">240 mos.</option>
+         <option value="300">300 mos.</option>
+         <option value="360">360 mos.</option>
         </div>
       </div>
+    </select>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-primary col-sm-1"
+          onclick="homeTablePage();">
+          Continue to Loan Table
+        </button>
+      </div>
+    </div>
   </body>
 </html>
