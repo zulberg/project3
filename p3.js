@@ -70,6 +70,7 @@ function getscoreauto() {
   } else if (score > 850) {
     alert("A score of 850 is considered perfect.  Please choose again.");
   }
+  return autorate;
 }
 
 function getautoprice() {
@@ -135,6 +136,28 @@ function autoDownPmt() {
   return totalAutoLoan;
 }
 
+function setCookie("autorate", autorate, 1) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "autorate" + "=" + autorate + ";" + 1 + ";path=/";
+}
+
+function setCookie("autotime", autotime, 1) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "autotime" + "=" + autotime + ";" + 1 + ";path=/";
+}
+
+function setCookie("autoloan", totalAutoLoan, 1) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "autoloan" + "=" + totalAutoLoan + ";" + 1 + ";path=/";
+}
+
+
 function autoTablePage() {
   window.location.href="autotable.html";
 }
@@ -185,6 +208,7 @@ function getscorehome() {
   } else if (score > 850) {
     alert("A score of 850 is considered perfect.  Please choose again.");
   }
+  return homerate;
 }
 
 function gethomeprice() {
@@ -250,11 +274,31 @@ function homeDownPmt() {
   return totalHomeLoan;
 }
 
+//courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
+function setCookie("homerate", homerate, 1) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "homerate" + "=" + homerate + ";" + 1 + ";path=/";
+}
 
+function setCookie("hometime", hometime, 1) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "hometime" + "=" + hometime + ";" + 1 + ";path=/";
+}
+
+function setCookie("homeloan", totalHomeLoan, 1) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "homeloan" + "=" + totalHomeLoan + ";" + 1 + ";path=/";
+}
 
 /* The following code is courtesy of Hubpages (https://hubpages.com/technology/Use-a-HTML-Form-with-JavaScript-to-Amortize-a-Loan) */
 /* For auto */
-function commitData() {
+function commitData(totalAutoLoan, autorate, autotime) {
   // Declare and initialize the variables
   var eleId;
   var eleDat;
