@@ -23,11 +23,12 @@ var homeprice;
 var downpmthome;
 var mindwnpmthome;
 var totalHomeLoan;
-var autotime=document.getElementById("automos").value;
-var hometime=document.getElementById("homomos").value;
-var autorate=[];
-var homerate=[];
+var autotime=[12, 24, 36, 48, 60, 72];
+var hometime=[60, 120, 180, 240, 300, 360];
 
+function auto_time() {
+  autotime=document.getElementById("automos").value;
+}
 function getscoreauto() {
   var index;
   score=document.getElementById("fico").value;
@@ -136,7 +137,7 @@ function autoDownPmt() {
   return totalAutoLoan;
 }
 
-function setCookie("autorate", autorate, 1) {
+/*function setCookie("autorate", autorate, 1) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
@@ -157,6 +158,50 @@ function setCookie("autoloan", totalAutoLoan, 1) {
     document.cookie = "autoloan" + "=" + totalAutoLoan + ";" + 1 + ";path=/";
 }
 
+function getCookie("autorate") {
+    var name = "autorate" + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function getCookie("autotime") {
+    var name = "autotime" + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function getCookie("autoloan") {
+    var name = "autoloan" + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}   */
 
 function autoTablePage() {
   window.location.href="autotable.html";
@@ -164,6 +209,10 @@ function autoTablePage() {
 
 function homeTablePage() {
   window.location.href="hometable.html";
+}
+
+function home_time() {
+  hometime=document.getElementById("homemos").value;
 }
 
 function getscorehome() {
@@ -275,7 +324,7 @@ function homeDownPmt() {
 }
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
-function setCookie("homerate", homerate, 1) {
+/*function setCookie("homerate", homerate, 1) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
@@ -295,16 +344,59 @@ function setCookie("homeloan", totalHomeLoan, 1) {
     var expires = "expires="+d.toUTCString();
     document.cookie = "homeloan" + "=" + totalHomeLoan + ";" + 1 + ";path=/";
 }
+function getCookie("homerate") {
+    var name = "homerate" + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
+function getCookie("hometime") {
+    var name = "hometime" + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function getCookie("homeloan") {
+    var name = "homeloan" + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+} */
 /* The following code is courtesy of Hubpages (https://hubpages.com/technology/Use-a-HTML-Form-with-JavaScript-to-Amortize-a-Loan) */
 /* For auto */
-function commitData(totalAutoLoan, autorate, autotime) {
+function commitData() {
   // Declare and initialize the variables
   var eleId;
   var eleDat;
-  var loanAmount=totalAutoLoan;
-  var intRate=autorate.value;
-  var numPay=document.getElementById("automos").value;
+  var loanAmount=getscoreauto(totalAutoLoan);
+  var intRate=getscoreauto(aloan[index].intrate);
+  var numPay=document.form1.numPay.value;
   var loopNum;
   var tagNum;
   var tagNam;
@@ -415,9 +507,9 @@ function commitDataHome() {
   // Declare and initialize the variables
   var eleId;
   var eleDat;
-  var loanAmount=totalHomeLoan;
-  var intRate=homerate.value;
-  var numPay=document.getElementById("homemos").value;
+  var loanAmount=getscorehome(totalHomeLoan);
+  var intRate=getscorehome(hloan[index].intrate);
+  var numPay=document.form1.numPay.value;
   var loopNum;
   var tagNum;
   var tagNam;
